@@ -1,0 +1,12 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "Details";
+}
+
+<img src="~/images/thumbnails/@Model.ID" alt="Thumbnail Image"/>
+<h2>@Model.FirstName @Model.LastName</h2>
+<p><strong>Customer #: @Model.ID</strong></p>
+<p>Address: @Model.Address</p>
+<p>City: @Model.City</p>
+<p>State: @Model.PhoneNumber</p>
+
