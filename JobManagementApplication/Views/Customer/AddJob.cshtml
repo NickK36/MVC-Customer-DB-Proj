@@ -1,0 +1,33 @@
+﻿@model JobCustomerVM
+@{
+    ViewData["Title"] = "AddJob";
+}
+
+<h2>New Job For @Model.Customer.FirstName @Model.Customer.LastName</h2>
+
+<form method="post" asp-controller="Customer" asp-action="AddJob">
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <td><label asp-for="@Model.Job.Title"></label></td>
+            <td><input asp-for="@Model.Job.Title" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="@Model.Job.Description"></label></td>
+            <td><input asp-for="@Model.Job.Description" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="@Model.Job.CustomerID"></label></td>
+            <td><input asp-for="@Model.Job.CustomerID" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="@Model.Job.DepositMade"></label></td>
+            <td><input asp-for="@Model.Job.DepositMade" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Save"></td>
+        </tr>
+    </tbody>
+</table>
+</form>

@@ -10,3 +10,10 @@
 <p>City: @Model.City</p>
 <p>State: @Model.PhoneNumber</p>
 
+<a asp-controller="Customer" asp-action="AddJob" asp-route-id="@Model.ID">
+    <input type="submit" value="Add A Job" />
+</a>
+
+<a asp-controller="Customer" asp-action="ViewJobs" asp-route-id="@Model.ID">
+    <input type="submit" value="View Jobs" />
+</a>

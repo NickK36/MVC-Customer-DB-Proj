@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JobManagementApplication.DAL;
 using JobManagementApplication.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,7 @@ namespace JobManagementApplication
             // Set up dependency injection to pass daos to the controller
             string connectionString = Configuration.GetConnectionString("Default");
             services.AddTransient<ICustomerSqlDAO, CustomerSqlDAO>(d => new CustomerSqlDAO(connectionString));
+            services.AddTransient<IJobSqlDAO, JobSqlDAO>(d => new JobSqlDAO(connectionString));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
