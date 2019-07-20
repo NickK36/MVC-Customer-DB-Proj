@@ -31,12 +31,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Customer" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>                  
-                    <li><a asp-area="" asp-controller="Customer" asp-action="Search">Search</a></li>
-                    <li><a asp-area="" asp-controller="Customer" asp-action="Add">Add Customer</a></li>
-                    <li><a asp-area="" asp-controller="Job" asp-action="Add">Add Job</a></li>
-                    <li><a asp-are="" asp-controller="Payment" asp-action="Add">Add Payment</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>*@
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>*@                  
+                    @*<li><a asp-area="" asp-controller="Customer" asp-action="Search">Search</a></li>*@
+                    @*<li><a asp-area="" asp-controller="Customer" asp-action="Add">Add Customer</a></li>*@
+                    <li><a asp-area="" asp-controller="Job" asp-action="AddJob">Add Job</a></li>
                 </ul>
             </div>
         </div>
@@ -48,7 +47,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - JobManagementApplication</p>
+            <p>&copy; 2019 - Customer Management Application</p>
         </footer>
     </div>
 

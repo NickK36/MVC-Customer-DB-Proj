@@ -10,6 +10,10 @@ namespace JobManagementApplication.DAL
     {
         IList<Job> GetJobs(int ID);
 
-        void CreateJob(string jobTitle, string jobDescription, int customerID, bool depositMade);
+        void CreateJob(string jobTitle, string jobDescription, int customerID, bool depositMade, decimal worth);
+
+        string ConvertBoolToString(bool boolValue);
+
+        Job GetJob(int ID);
     }
 }

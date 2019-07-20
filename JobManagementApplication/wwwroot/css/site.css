@@ -68,3 +68,12 @@ h2.title {
 .table > thead:first-child > tr:first-child > th {
     border-bottom: 1px solid #ddd;
 }
+
+tr.header {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#customer-image {
+    width: 20pc;
+}

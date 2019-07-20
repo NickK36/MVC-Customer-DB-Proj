@@ -88,6 +88,7 @@ namespace JobManagementApplication.Models
             obj.Address = Convert.ToString(reader["Address"]);
             obj.City = Convert.ToString(reader["City"]);
             obj.PhoneNumber = Convert.ToString(reader["PhoneNumber"]);
+            obj.ImageName = obj.ID.ToString() + ".jpg";
             return obj;
         }
 

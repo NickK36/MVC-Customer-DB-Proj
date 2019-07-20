@@ -1,19 +1,19 @@
 ﻿@model Customer
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = $"{Model.Address}";
 }
 
-<img src="~/images/thumbnails/@Model.ID" alt="Thumbnail Image"/>
+<img id="customer-image" src="~/images/housepictures/@Model.ImageName" alt="Thumbnail Image"/>
 <h2>@Model.FirstName @Model.LastName</h2>
-<p><strong>Customer #: @Model.ID</strong></p>
+<p><strong>Customer ID: @Model.ID</strong></p>
 <p>Address: @Model.Address</p>
 <p>City: @Model.City</p>
 <p>State: @Model.PhoneNumber</p>
 
-<a asp-controller="Customer" asp-action="AddJob" asp-route-id="@Model.ID">
+<a asp-controller="Job" asp-action="AddJob" asp-route-id="@Model.ID">
     <input type="submit" value="Add A Job" />
 </a>
 
-<a asp-controller="Customer" asp-action="ViewJobs" asp-route-id="@Model.ID">
+<a asp-controller="Job" asp-action="ViewJobs" asp-route-id="@Model.ID">
     <input type="submit" value="View Jobs" />
 </a>
