@@ -61,46 +61,25 @@ CREATE TABLE Job (
 -- Insert a bunch of test data into the customer table
 INSERT INTO Customer (FirstName, LastName, Address, PhoneNumber, City)
 	VALUES 
-	('Nick', 'Konopka', '10138 Peachtree Drive', '440-212-0376', 'Strongsville')
+	('Nick', 'Shellman', '1 testStreet Road', 'XXX-XXX-XXXX', 'Strongsville')
 	DECLARE @NickID int = (SELECT @@IDENTITY);
 INSERT INTO Customer (FirstName, LastName, Address, PhoneNumber, City)
 	VALUES 
-	('Paul', 'Konopka', '2135 Greenbriar Drive', '440-212-0376', 'Strongsville')
+	('Paul', 'Bronson', '2 testStreet Drive', 'XXX-XXX-XXXX', 'Strongsville')
 	DECLARE @PaulID int = (SELECT @@IDENTITY);
 INSERT INTO Customer (FirstName, LastName, Address, PhoneNumber, City)
 	VALUES 
-	('Steve', 'Silverson', '1236 State Road', '440-212-0376', 'Cleveland')
+	('Steve', 'Harris', '3 testStreet Ave', 'XXX-XXX-XXXX', 'Cleveland')
 	DECLARE @SteveID int = (SELECT @@IDENTITY);
 INSERT INTO Customer (FirstName, LastName, Address, PhoneNumber, City)
 	VALUES 
-	('Rick', 'Johnson', '1234 Fair Road', '440-212-0376', 'Berea')
+	('Rick', 'Harris', '4 testStreet Blvd', 'XXX-XXX-XXXX', 'Berea')
 	DECLARE @RickID int = (SELECT @@IDENTITY);
 INSERT INTO Customer (FirstName, LastName, Address, PhoneNumber, City)
 	VALUES 
-	('Jack', 'Obek', '2136 Broadview Road', '440-212-0376', 'Cleveland')
+	('Jack', 'Stevson', '5 testStreet Ln', 'XXX-XXX-XXXX', 'Cleveland')
 	DECLARE @JackID int = (SELECT @@IDENTITY);
 
-	
--- Insert a bunch of test data into the payment table	
---INSERT INTO Payment (CustomerID, AmountSpent)
---	VALUES
---	(@NickID, 20000),
---	(@PaulID, 10000),
---	(@SteveID, 295000),
---	(@RickID, 2651),
---	(@JackID, 23000)
-
-
---ALTER TABLE Customer ADD CONSTRAINT fk_Customer_PaymentID
---	FOREIGN KEY (ID) REFERENCES Payment(ID)
--- Finish transaction
 COMMIT TRANSACTION
 GO
 
---DELETE FROM Customer WHERE name = '@name';
-SELECT * FROM Customer;
-SELECT * FROM Job;
---SELECT * FROM Payment
---USE master
---DROP DATABASE Jobs
-DELETE FROM Job WHERE JobTitle = 'test'
