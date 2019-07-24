@@ -1,5 +1,6 @@
 ﻿:root {
     --servpro-green-color: #7cc343;
+    --servpro-orange-color: #F3793D;
 }
 
 
@@ -42,15 +43,18 @@ body {
 }
 
 #table-name {
-    padding-left: 5pc;
+    font-size: 1.5pc;
+    text-align: center;
 }
 
 #table-address {
-    padding-left: 3pc;
+    font-size: 1.5pc;
+    text-align: center;
 }
 
 #table-city {
-    padding-left: 1.4pc;
+    font-size: 1.5pc;
+    text-align: center;
 }
 
 a {
@@ -59,10 +63,12 @@ a {
 
 .table-head {
     text-decoration: underline;
+    color: var(--servpro-green-color);
 }
 
 h2.title {
     text-align: center;
+    color: var(--servpro-orange-color);
 }
 
 .table > thead:first-child > tr:first-child > th {
@@ -80,4 +86,12 @@ tr.header {
 
 .danger {
     color: red;
+}
+
+td.tabledata {
+    text-align: center;
+}
+
+a.address-link {
+    color: var(--servpro-orange-color);
 }

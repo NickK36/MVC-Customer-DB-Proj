@@ -17,11 +17,11 @@
         @foreach (Customer customer in Model)
         {
             <tr>
-                <td>@customer.FirstName</td>
-                <td>@customer.LastName</td>
-                <td>@customer.Address</td>
-                <td>@customer.City</td>
-                <td id="customer-detail-link"><a asp-controller="Customer" asp-action="Detail" asp-route-id="@customer.ID">More Details</a></td>
+                <td class="tabledata">@customer.FirstName</td>
+                <td class="tabledata">@customer.LastName</td>
+                <td class="tabledata"><a href="https://www.google.com/maps/search/?api=1&query=@customer.Address" class="address-link" target="_blank">@customer.Address</a></td>
+                <td class="tabledata">@customer.City</td>
+                <td id="customer-detail-link" class="tabledata"><a asp-controller="Customer" asp-action="Detail" asp-route-id="@customer.ID">More Details</a></td>
             </tr>
         }
     </tbody>
