@@ -11,6 +11,6 @@ namespace JobManagementApplication.Models
 
         Customer GetCustomerByID(int ID);
 
-        int CreateCustomer(Customer customer);
+        void CreateCustomer(Customer customer);
     }
 }

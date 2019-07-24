@@ -78,7 +78,7 @@ namespace JobManagementApplication.Models
             return customerList;
         }
 
-        public int CreateCustomer(Customer customer)
+        public void CreateCustomer(Customer customer)
         {
             try
             {
@@ -100,12 +100,8 @@ namespace JobManagementApplication.Models
 
                     cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@address", customer.Address);
-                    int customerID = (int)cmd.ExecuteScalar();
-                    return customerID;
-                   
-
-
-                }
+                    cmd.ExecuteScalar();
+               }
             }
             catch (SqlException ex)
             {

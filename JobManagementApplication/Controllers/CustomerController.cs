@@ -49,7 +49,7 @@ namespace JobManagementApplication.Controllers
             }
             else
             {
-                int customerID = customerDAO.CreateCustomer(customer);
+                customerDAO.CreateCustomer(customer);
                 return RedirectToAction("Index", "Customer");
             }
         }
