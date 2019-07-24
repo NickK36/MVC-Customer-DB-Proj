@@ -33,5 +33,34 @@ namespace JobManagementApplication.Controllers
             return View(customer);
         }
 
+        [HttpGet]
+        public IActionResult Add()
+        {
+            Customer customer = new Customer();
+            return View(customer);
+        }
+
+        [HttpPost]
+        public IActionResult Add(Customer customer)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                int customerID = customerDAO.CreateCustomer(customer);
+                return RedirectToAction("Index", "Customer");
+            }
+        }
+
+
+
+        [HttpPost]
+        public IActionResult AddJob(Job job)
+        {
+            jobDAO.CreateJob(job.Title, job.Description, job.CustomerID, job.DepositMade, job.Worth);
+            return RedirectToAction("Index", "Customer");
+        }
     }
 }

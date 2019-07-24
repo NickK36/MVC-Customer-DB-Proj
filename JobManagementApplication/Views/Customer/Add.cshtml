@@ -1,0 +1,44 @@
+﻿@model  Customer
+@{
+    ViewData["Title"] = "Add A New Customer";
+}
+
+<h4>Please Enter The Following Details</h4>
+
+<form method="post" asp-controller="Customer" asp-action="Add">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td><label asp-for="@Model.FirstName"></label></td>
+                <td><input asp-for="@Model.FirstName" /></td>
+                <td><span asp-validation-for="@Model.FirstName" class="danger"></span></td>
+               
+            </tr>
+            <tr>
+                <td><label asp-for="@Model.LastName"></label></td>
+                <td><input asp-for="@Model.LastName" /></td>
+                <td><span asp-validation-for="@Model.LastName" class="danger"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for="@Model.PhoneNumber"></label></td>
+                <td><input asp-for="@Model.PhoneNumber" /></td>
+                <td><span asp-validation-for="@Model.PhoneNumber" class="danger"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for="@Model.Address"></label></td>
+                <td><input asp-for="@Model.Address" /></td>
+                <td><span asp-validation-for="@Model.Address" class="danger"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for="@Model.City"></label></td>
+                <td><input asp-for="@Model.City" /></td>
+                <td><span asp-validation-for="@Model.City" class="danger"></span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Save"></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+

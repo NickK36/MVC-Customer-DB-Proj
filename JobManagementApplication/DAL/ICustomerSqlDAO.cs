@@ -10,5 +10,7 @@ namespace JobManagementApplication.Models
         IList<Customer> GetCustomers();
 
         Customer GetCustomerByID(int ID);
+
+        int CreateCustomer(Customer customer);
     }
 }
