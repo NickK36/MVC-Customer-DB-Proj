@@ -81,9 +81,44 @@ tr.header {
 }
 
 #customer-image {
-    width: 20pc;
+    grid-area: pic;
+    display: flex;
+    width: 100%;
+    height: 25pc;
 }
 
+.grid-name {
+    grid-area: name;
+    color: var(--servpro-green-color);
+}
+
+.grid-id {
+    grid-area: id;
+    color: var(--servpro-green-color);
+}
+
+.grid-address {
+    grid-area: adrs;
+    color: var(--servpro-orange-color)
+}
+
+.grid-phone {
+    grid-area: phone;
+    color: var(--servpro-green-color);
+}
+
+.grid-city {
+    grid-area: city;
+    color: var(--servpro-green-color);
+}
+
+.grid-add-job {
+    grid-area: adjb;
+}
+
+.grid-view-job {
+    grid-area: viewjb;
+}
 .danger {
     color: red;
 }
@@ -94,4 +129,15 @@ td.tabledata {
 
 a.address-link {
     color: var(--servpro-orange-color);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-areas: ". pic pic pic ."
+                         ". name   .  id ."
+                         ". phone adrs  city ."
+                         ". adjb .  viewjb . ";
+    grid-gap: 10px;
+    text-align: center;
 }

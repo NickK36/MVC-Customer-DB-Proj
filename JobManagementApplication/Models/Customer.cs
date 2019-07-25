@@ -12,7 +12,7 @@ namespace JobManagementApplication.Models
         [Display(Name ="Last Name"), StringLength(60, MinimumLength = 3)]
         public string LastName { get; set; }
         [Required]
-        [Display(Name ="Phone Number"), StringLength(11, MinimumLength = 10)]
+        [Display(Name ="Phone Number"), DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
         [Required]
         [Display(Name ="Address"), StringLength(30, MinimumLength = 10)]

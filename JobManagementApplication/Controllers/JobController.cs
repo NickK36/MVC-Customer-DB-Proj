@@ -30,8 +30,15 @@ namespace JobManagementApplication.Controllers
         [HttpPost]
         public IActionResult AddJob(Job job)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
                 jobDAO.CreateJob(job.Title, job.Description, job.CustomerID, job.DepositMade, job.Worth);
                 return RedirectToAction("Index", "Customer");
+            }
         }
 
         [HttpGet]
