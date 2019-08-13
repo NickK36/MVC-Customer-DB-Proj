@@ -48,5 +48,14 @@ namespace JobManagementApplication.Controllers
             jobDAO.CreateJob(job.Title, job.Description, job.CustomerID, job.DepositMade);
             return RedirectToAction("Index", "Customer");
         }
+         
+        [HttpGet]
+        public IActionResult ViewJobs(int ID)
+        {
+            JobCustomerVM vm = new JobCustomerVM();
+            vm.Customer = customerDAO.GetCustomerByID(ID);
+            vm.JobList = jobDAO.GetJobs(ID);
+            return View(vm);
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace JobManagementApplication.Models
     {
         public Customer Customer { get; set; }
         public Job Job { get; set; }
+        public IList<Job> JobList { get; set; }
     }
 }

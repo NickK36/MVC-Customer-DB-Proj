@@ -1,0 +1,23 @@
+﻿@model JobCustomerVM
+@{
+    ViewData["Title"] = "ViewJobs";
+}
+
+<h2>Viewing Jobs For @Model.Customer.FirstName @Model.Customer.LastName</h2>
+
+<table class="table table-striped">
+    @foreach(Job job in Model.JobList)
+    {
+        <tr>
+            <td>@job.Title</td>
+            <td>@job.Description</td>
+            <td>@job.DateStarted</td>
+            <td>@job.IsFinished</td>
+            <td>@job.DepositMade</td>
+            @if (job.IsFinished == true)
+            {
+                <td>@job.DateFinished</td>
+            }
+        </tr>
+    }
+</table>
