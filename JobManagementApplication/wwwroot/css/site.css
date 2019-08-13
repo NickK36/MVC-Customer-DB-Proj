@@ -1,5 +1,6 @@
 ﻿:root {
     --servpro-green-color: #7cc343;
+    --servpro-orange-color: #F3793D;
 }
 
 
@@ -42,15 +43,18 @@ body {
 }
 
 #table-name {
-    padding-left: 5pc;
+    font-size: 1.5pc;
+    text-align: center;
 }
 
 #table-address {
-    padding-left: 3pc;
+    font-size: 1.5pc;
+    text-align: center;
 }
 
 #table-city {
-    padding-left: 1.4pc;
+    font-size: 1.5pc;
+    text-align: center;
 }
 
 a {
@@ -59,12 +63,81 @@ a {
 
 .table-head {
     text-decoration: underline;
+    color: var(--servpro-green-color);
 }
 
 h2.title {
     text-align: center;
+    color: var(--servpro-orange-color);
 }
 
 .table > thead:first-child > tr:first-child > th {
     border-bottom: 1px solid #ddd;
+}
+
+tr.header {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#customer-image {
+    grid-area: pic;
+    display: flex;
+    width: 100%;
+    height: 25pc;
+}
+
+.grid-name {
+    grid-area: name;
+    color: var(--servpro-green-color);
+}
+
+.grid-id {
+    grid-area: id;
+    color: var(--servpro-green-color);
+}
+
+.grid-address {
+    grid-area: adrs;
+    color: var(--servpro-orange-color)
+}
+
+.grid-phone {
+    grid-area: phone;
+    color: var(--servpro-green-color);
+}
+
+.grid-city {
+    grid-area: city;
+    color: var(--servpro-green-color);
+}
+
+.grid-add-job {
+    grid-area: adjb;
+}
+
+.grid-view-job {
+    grid-area: viewjb;
+}
+.danger {
+    color: red;
+}
+
+td.tabledata {
+    text-align: center;
+}
+
+a.address-link {
+    color: var(--servpro-orange-color);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-areas: ". pic pic pic ."
+                         ". name   .  id ."
+                         ". phone adrs  city ."
+                         ". adjb .  viewjb . ";
+    grid-gap: 10px;
+    text-align: center;
 }

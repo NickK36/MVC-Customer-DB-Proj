@@ -1,0 +1,30 @@
+﻿@model IList<Job>
+@{
+    ViewData["Title"] = "View Jobs";
+}
+
+<h2>Jobs</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr class="header">
+            <td>Title</td>
+            <td>Date Started</td>
+            <td>Deposit Made</td>
+            <td>Finished</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Job job in Model)
+        {
+            <tr>
+                    <td>@job.Title</td>
+                <td>@job.DateStarted.ToString("MM/dd/yyyy")</td>
+                <td>@job.convDepositMade</td>
+                <td>@job.convIsFinished</td>
+                <td><a asp-controller="Job" asp-action="Detail" asp-route-id="@job.ID">More Info</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>

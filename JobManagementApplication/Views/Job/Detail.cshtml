@@ -1,0 +1,19 @@
+﻿@model Job
+@{
+    ViewData["Title"] = $"Job #{Model.ID}";
+}
+
+<h2>@Model.Title</h2>
+<p>@Model.Description</p>
+<p>Job Started On: @Model.DateStarted.ToString("MM/dd/yyyy")</p>
+<p>Has The Deposit Been Made: @Model.convDepositMade</p>
+<p>This Job Cost: @Model.Worth.ToString("C")</p>
+@if (Model.convIsFinished == "No" || Model.convIsFinished == "N/A")
+{
+    <p>Job In Progress!</p>
+}
+else
+{
+    <p>Job Finished On: @Model.DateFinished.ToString("MM/dd/yyyy")</p>
+}
+

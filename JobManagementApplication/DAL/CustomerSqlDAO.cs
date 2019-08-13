@@ -78,6 +78,37 @@ namespace JobManagementApplication.Models
             return customerList;
         }
 
+        public void CreateCustomer(Customer customer)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    
+                    string sql = $"INSERT INTO Customer (FirstName, LastName, Address, City, PhoneNumber)" +
+                        $"                       VALUES (@firstName, @lastName, @address, @city, @phoneNumber);";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@firstName", customer.FirstName);
+                    cmd.Parameters.AddWithValue("@lastName", customer.LastName);
+                    cmd.Parameters.AddWithValue("@address", customer.Address);
+                    cmd.Parameters.AddWithValue("@city", customer.City);
+                    cmd.Parameters.AddWithValue("@phoneNumber", customer.PhoneNumber);
+                    cmd.ExecuteNonQuery();
+
+                    sql = "SELECT ID FROM Customer WHERE Address = @address;";
+
+                    cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@address", customer.Address);
+                    cmd.ExecuteScalar();
+               }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         private Customer RowToObject(SqlDataReader reader)
         {
             // Create a customer
@@ -88,6 +119,7 @@ namespace JobManagementApplication.Models
             obj.Address = Convert.ToString(reader["Address"]);
             obj.City = Convert.ToString(reader["City"]);
             obj.PhoneNumber = Convert.ToString(reader["PhoneNumber"]);
+            obj.ImageName = obj.ID.ToString() + ".jpg";
             return obj;
         }
 

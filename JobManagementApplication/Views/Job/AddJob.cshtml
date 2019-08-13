@@ -1,0 +1,42 @@
+﻿@model JobCustomerVM
+@{
+    ViewData["Title"] = "AddJob";
+}
+
+<h2>New Job</h2>
+@*<h2>New Job For @Model.Customer.FirstName @Model.Customer.LastName</h2>*@
+<form method="post" asp-controller="Job" asp-action="AddJob">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td><label asp-for="@Model.Job.Title"></label></td>
+                <td><input asp-for="@Model.Job.Title" placeholder="Example Job" /></td>
+                <td><span asp-validation-for="@Model.Job.Title" class="danger"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for="@Model.Job.Description"></label></td>
+                <td><input asp-for="@Model.Job.Description" placeholder="A short description of the job" /></td>
+                <td><span asp-validation-for="@Model.Job.Description" class="danger"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for="@Model.Job.CustomerID"></label></td>
+                <td><input asp-for="@Model.Job.CustomerID" placeholder="1" /></td>
+                <td><span asp-validation-for="@Model.Job.CustomerID" class="danger"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for="@Model.Job.DepositMade"></label></td>
+                <td><input asp-for="@Model.Job.DepositMade" /></td>
+                <td><span asp-validation-for="@Model.Job.DepositMade" class="danger"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for="@Model.Job.Worth" />Job's Worth</td>
+                <td><input asp-for="@Model.Job.Worth" placeholder="199.99" /></td>
+                <td><span asp-validation-for="@Model.Job.Worth" class="danger"></span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Save"></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
